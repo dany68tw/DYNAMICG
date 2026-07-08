@@ -4,7 +4,7 @@ on:
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: macos-15
     steps:
       - name: Checkout Source Code
         uses: actions/checkout@v4
@@ -17,11 +17,17 @@ jobs:
       - name: Install Dependencies
         run: |
           npm install
-          npm install @capacitor/ios
+          npm install @capacitor/core @capacitor/cli @capacitor/ios
 
-      - name: Sync Capacitor iOS
+      - name: Add and Sync iOS Platform
         run: |
+          npx cap add ios
           npx cap sync ios
+
+      - name: Install Pods
+        run: |
+          cd ios/App
+          pod install
 
       - name: Build Xcode Project
         run: |
