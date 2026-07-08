@@ -1,0 +1,370 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#eef2f7;
+    color:#333;
+    padding-bottom:90px;
+}
+
+/*==========================
+        HEADER
+==========================*/
+
+header{
+    background:#1f2937;
+    color:#fff;
+    text-align:center;
+    padding:20px;
+    box-shadow:0 2px 8px rgba(0,0,0,.2);
+}
+
+header h1{
+    font-size:30px;
+}
+
+header p{
+    margin-top:5px;
+    color:#d1d5db;
+}
+
+/*==========================
+        MAIN
+==========================*/
+
+main{
+    padding:15px;
+}
+
+/*==========================
+      PANTALLAS
+==========================*/
+
+.pantalla{
+    display:none;
+}
+
+.pantalla.activa{
+    display:block;
+}
+
+/*==========================
+      DASHBOARD
+==========================*/
+
+.dashboard{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+    gap:15px;
+}
+
+.tarjeta{
+    background:#fff;
+    border-radius:15px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.tarjeta h3{
+    font-size:34px;
+    color:#2563eb;
+    margin-bottom:8px;
+}
+
+.tarjeta p{
+    color:#666;
+}
+
+/*==========================
+      FORMULARIO
+==========================*/
+
+.formulario,
+.busqueda,
+.cliente{
+
+    background:white;
+
+    margin-bottom:15px;
+
+    border-radius:15px;
+
+    padding:18px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+.formulario h2{
+
+    margin-bottom:15px;
+
+}
+
+input{
+
+    width:100%;
+
+    padding:12px;
+
+    margin-bottom:12px;
+
+    border-radius:10px;
+
+    border:1px solid #ccc;
+
+    font-size:15px;
+
+}
+
+input:focus{
+
+    outline:none;
+
+    border-color:#2563eb;
+
+}
+
+/*==========================
+      BOTONES
+==========================*/
+
+button{
+
+    width:100%;
+
+    padding:13px;
+
+    border:none;
+
+    border-radius:10px;
+
+    color:white;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    margin-top:8px;
+
+}
+
+button:hover{
+
+    opacity:.9;
+
+}
+
+#btnGuardar{
+
+    background:#2563eb;
+
+}
+
+.btn-editar{
+
+    background:#f59e0b;
+
+}
+
+.btn-pago{
+
+    background:#16a34a;
+
+}
+
+.btn-eliminar{
+
+    background:#dc2626;
+
+}
+
+.btn-cancelar{
+
+    background:#6b7280;
+
+}
+
+/*==========================
+      CLIENTES
+==========================*/
+
+.cliente h3{
+
+    margin-bottom:10px;
+
+    color:#111827;
+
+}
+
+.cliente p{
+
+    margin:6px 0;
+
+}
+
+.estado-ok{
+
+    color:#16a34a;
+
+    font-weight:bold;
+
+}
+
+.estado-vencido{
+
+    color:#dc2626;
+
+    font-weight:bold;
+
+}
+
+/*==========================
+     MENU INFERIOR
+==========================*/
+
+.menu-inferior{
+
+    position:fixed;
+
+    bottom:0;
+
+    left:0;
+
+    right:0;
+
+    height:75px;
+
+    background:#1f2937;
+
+    display:flex;
+
+    justify-content:space-around;
+
+    align-items:center;
+
+    box-shadow:0 -3px 10px rgba(0,0,0,.2);
+
+}
+
+.menu-inferior button{
+
+    background:none;
+
+    width:auto;
+
+    color:white;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:4px;
+
+    font-size:22px;
+
+}
+
+.menu-inferior span{
+
+    font-size:12px;
+
+}
+
+/*==========================
+     NOTIFICACIONES
+==========================*/
+
+.notificacion{
+
+    position:fixed;
+
+    top:20px;
+
+    right:20px;
+
+    padding:15px 20px;
+
+    border-radius:10px;
+
+    color:white;
+
+    display:none;
+
+    z-index:999;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+
+}
+
+.notificacion.ok{
+
+    background:#16a34a;
+
+}
+
+.notificacion.error{
+
+    background:#dc2626;
+
+}
+
+.notificacion.info{
+
+    background:#2563eb;
+
+}
+
+/*==========================
+      CELULARES
+==========================*/
+
+@media(max-width:600px){
+
+header h1{
+
+font-size:24px;
+
+}
+
+.dashboard{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+/*==========================
+      HISTORIAL DE PAGOS
+==========================*/
+
+.pago-item {
+  background: white;
+  padding: 15px;
+  border-radius: 15px;
+  margin-bottom: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.08);
+}
+
+.pago-item h3 {
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.pago-item p {
+  margin: 5px 0;
+}
+
+.pago-importe {
+  color: #16a34a;
+  font-weight: bold;
+  font-size: 18px;
+}
