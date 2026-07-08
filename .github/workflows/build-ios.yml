@@ -23,6 +23,12 @@ jobs:
         run: |
           npx cap sync ios
 
+      - name: Create Podfile if missing
+        run: |
+          cd ios/App
+          if [ ! -f Podfile ]; then pod init; fi
+
+
       - name: Install Pods
         run: |
           cd ios/App
