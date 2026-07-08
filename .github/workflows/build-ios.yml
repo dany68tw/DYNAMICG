@@ -19,7 +19,10 @@ jobs:
           npm install
           npm install @capacitor/core @capacitor/cli @capacitor/ios
 
-      - name: Add and Sync iOS Platform
+      -       - name: Sync Capacitor iOS
+        run: |
+          npx cap sync ios
+
         run: |
           npx cap add ios
           npx cap sync ios
