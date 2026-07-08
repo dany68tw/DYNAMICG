@@ -1,0 +1,9 @@
+{
+	"appId": "com.dynamicgym.app",
+	"appName": "Dynamic Gym",
+	"webDir": "www",
+	"server": {
+		"androidScheme": "https"
+	},
+	"packageClassList": []
+}
