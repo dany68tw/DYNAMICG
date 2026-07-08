@@ -37,3 +37,10 @@ jobs:
       - name: Build Xcode Project
         run: |
           xcodebuild -workspace ios/App/App.xcworkspace -scheme App -sdk iphoneos -configuration Release clean build CODE_SIGNING_ALLOWED=NO
+      
+      - name: Compress and Upload App Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Production-App
+          path: ~/Library/Developer/Xcode/DerivedData/*/Build/Products/Release-iphoneos/*.app
+
