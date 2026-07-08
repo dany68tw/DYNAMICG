@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Gym</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <div id="notificacion" class="notificacion"></div>
+
+  <header>
+    <h1>Dynamic Gym</h1>
+    <p>Sistema de gestión</p>
+  </header>
+
+  <main>
+
+    <!-- PANTALLA INICIO -->
+    <section id="pantallaInicio" class="pantalla activa">
+      <h2>Inicio</h2>
+
+      <div class="dashboard">
+        <div class="tarjeta">
+          <h3 id="totalClientes">0</h3>
+          <p>Clientes cargados</p>
+        </div>
+
+        <div class="tarjeta">
+          <h3 id="clientesAlDia">0</h3>
+          <p>Clientes al día</p>
+        </div>
+
+        <div class="tarjeta">
+          <h3 id="clientesVencidos">0</h3>
+          <p>Clientes vencidos</p>
+        </div>
+
+        <div class="tarjeta">
+          <h3 id="recaudacionMes">$0</h3>
+          <p>Recaudación estimada</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANTALLA CLIENTES -->
+    <section id="pantallaClientes" class="pantalla">
+      <section class="formulario">
+        <h2 id="tituloFormulario">Nuevo Cliente</h2>
+
+        <input type="hidden" id="clienteId">
+
+        <input type="text" id="nombre" placeholder="Nombre y apellido">
+        <input type="text" id="dni" placeholder="DNI">
+        <input type="text" id="telefono" placeholder="Teléfono">
+        <input type="email" id="email" placeholder="Email">
+        <input type="number" id="cuota" placeholder="Valor de cuota">
+        <input type="date" id="vencimiento">
+
+        <button id="btnGuardar" onclick="guardarCliente()">Guardar Cliente</button>
+
+        <button
+          id="btnCancelar"
+          class="btn-cancelar"
+          onclick="cancelarEdicion()"
+          style="display:none;"
+        >
+          Cancelar edición
+        </button>
+      </section>
+
+      <section class="busqueda">
+        <input type="text" id="buscar" placeholder="Buscar cliente..." onkeyup="mostrarClientes()">
+      </section>
+
+      <section id="listaClientes">
+        <div class="cliente">
+          <h3>No hay clientes cargados</h3>
+          <p>Presione Guardar Cliente</p>
+        </div>
+      </section>
+    </section>
+
+   <!-- PANTALLA PAGOS -->
+<section id="pantallaPagos" class="pantalla">
+  <h2>Historial de pagos</h2>
+
+  <section class="busqueda">
+    <input 
+      type="text" 
+      id="buscarPago" 
+      placeholder="Buscar pago por cliente o DNI..." 
+      onkeyup="mostrarHistorialPagos()"
+    >
+  </section>
+
+  <section id="listaPagos">
+    <div class="cliente">
+      <h3>No hay pagos registrados</h3>
+      <p>Los pagos aparecerán aquí cuando registres cuotas desde Clientes.</p>
+    </div>
+  </section>
+</section>
+
+    <!-- PANTALLA REPORTES -->
+    <section id="pantallaReportes" class="pantalla">
+      <h2>Reportes</h2>
+      <div class="cliente">
+        <h3>Reportes disponibles</h3>
+        <p>Clientes al día, clientes vencidos y recaudación estimada.</p>
+      </div>
+    </section>
+
+    <!-- PANTALLA CONFIGURACION -->
+    <section id="pantallaConfiguracion" class="pantalla">
+      <h2>Configuración</h2>
+      <div class="cliente">
+        <h3>Dynamic Gym</h3>
+        <p>Más adelante podremos configurar nombre del gimnasio, logo, cuotas y copias de seguridad.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MENÚ INFERIOR -->
+  <nav class="menu-inferior">
+    <button onclick="mostrarPantalla('Inicio')">🏠<span>Inicio</span></button>
+    <button onclick="mostrarPantalla('Clientes')">👤<span>Clientes</span></button>
+    <button onclick="mostrarPantalla('Pagos')">💳<span>Pagos</span></button>
+    <button onclick="mostrarPantalla('Reportes')">📊<span>Reportes</span></button>
+    <button onclick="mostrarPantalla('Configuracion')">⚙<span>Config.</span></button>
+  </nav>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
